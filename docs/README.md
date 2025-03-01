@@ -1,0 +1,1 @@
+This is a simple manga site. Hopefully, the frontend will be built using React, while the backend will be developed using Go with Gin framework and PostgreSQL.
