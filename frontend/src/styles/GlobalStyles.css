@@ -1,0 +1,262 @@
+.contain__bottom{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 4.4em;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: var(--cor-cinza);
+    border-radius: 1em 1em 0 0;
+    z-index: 998;
+}
+
+.contain__item{
+    display: flex;
+    align-items: center;
+    padding: 0 0.8em;
+}
+
+.contain__item.active{
+    background-color: var(--verde);
+}
+
+.contain__item:hover{
+    background-color: var(--verde);
+    border-radius: 12px;
+}
+
+.contain__link{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--branco);
+    font-family: var(--fonte-secundaria);
+    font-size: 12px;
+}
+
+
+.contain__img{
+    padding-bottom: 0.2em;
+    width: 25px;
+}
+
+@media screen and (min-width: 760px){
+    .contain__item{
+        padding: 0 1em;
+    }
+
+    .contain__img{
+        width: 30px;
+    }
+
+    .contain__link{
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1025px){
+    .contain__bottom{
+        display: none;
+    }
+}
+
+.sidebar {
+    --side-width: 215px;
+    position: fixed;
+    width: var(--side-width);
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #282c34;
+    padding: 0 20px 20px 25px;
+    border-right: solid #252525 1px;
+}
+
+.sidebar img {
+    width: 10rem;
+}
+
+.sidebar input {
+    color: #fff;
+    border: 1px solid #343434;
+    border-radius: 14px;
+    padding: 12px 22px;
+    background-color: #262626;
+    max-width: 190px;
+    margin-bottom: 6px;
+    background: linear-gradient(rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2))
+}
+
+.sidebar .sidebar-links {
+    font-size: 16px;
+    padding: 16px;
+    text-decoration: none;
+    color: #999999;
+    display: block;
+}
+
+.sidebar .sidebar-links:hover {
+    transition: 0.3s;
+    color: #fff;
+}
+
+.sidebar span {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar div span img {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+hr {
+    border-color: #383838;
+
+}
+
+.navbar {
+    padding-top: 20px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0;
+}
+
+.navbar ul li {
+    display: flex;
+    align-items: center;
+}
+
+.navbar img {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.credits footer {
+    width: var(--side-width);
+    bottom: 0;
+    position: fixed;
+}
+
+.credits p {
+    color: #404040;
+    font-size: 14px;
+}
+
+.credits .github {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0px;
+    color: #505050;
+}
+
+.discord {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0px;
+    text-decoration: none;
+    color: #505050;
+}
+
+.hr-footer {
+    display: none;
+}
+
+.credits2 {
+    display: none;
+    padding: 12px;
+}
+
+.credits2 p {
+    color: #404040;
+    font-size: 16px;
+}
+
+.credits2 .github {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0px;
+    color: #505050;
+}
+
+.github:hover {
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+
+.content {
+    margin-left: 260px;
+    /* ajuste para compensar a largura do menu */
+}
+
+.content-case {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+.formatlist2 {
+    position: absolute;
+    background-color: #810909;
+    z-index: 2;
+    padding: 4px;
+    border-radius: 3px;
+    margin: 2px;
+    font-size: 12px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        display: none;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .content {
+        width: 800px;
+        margin: 0 auto;
+        /* ajuste para compensar a largura do menu */
+    }
+
+    .hr-footer {
+        display: block;
+    }
+
+    .credits2 {
+        display: block;
+        padding: 12px 0 100px;
+        text-align: center;
+
+    }
+}
+
+@media screen and (max-width: 801px) {
+    .content {
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 701px) {
+    .content {
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 501px) {
+    .content {
+        width: 480px;
+    }
+}
