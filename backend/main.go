@@ -1,39 +1,29 @@
 package main
 
 import (
-    "database/sql"
-    "fmt"
-    "os"
+    "time"
 
+    "github.com/gin-contrib/cors"
     "github.com/gin-gonic/gin"
 )
 
 func main() {
 
-    var (
-        host     = os.Getenv("DB_HOST")
-        port     = os.Getenv("DB_PORT")
-        user     = os.Getenv("POSTGRES_USER")
-        password = os.Getenv("DB_PASSWORD")
-        dbname   = os.Getenv("DB_NAME")
-    )
-
-    psqlInfo := fmt.Sprintf("host=%s port=%s user=%s "+
-        "password=%s dbname=%s sslmode=disable",
-        host, port, user, password, dbname)
-
-    database, error := sql.Open("postgres", psqlInfo)
-    if error != nil {
-        panic(error)
-    }
-    connection, error := database.Driver().Open("uwu")
-    if error != nil {
-        panic(error)
+    var router = gin.Default()
+    var config = cors.Config{
+        AllowOrigins:     []string{"http://localhost:3000", "http://127.0.0.1:3000"},
+        AllowMethods:     []string{"GET", "POST", "PUT", "PATCH"},
+        AllowHeaders:     []string{"Origin", "Access-Control-Allow-Credentials", "Access-Control-Allow-Origin"},
+        ExposeHeaders:    []string{"Content-Length"},
+        AllowCredentials: true,
+        AllowOriginFunc: func(origin string) bool {
+            return true
+        },
+        MaxAge: 12 * time.Hour,
     }
 
-    router := gin.Default()
+    router.Use(cors.New(config))
     router.GET("/ping", ping)
-
     router.Run()
 }
 
