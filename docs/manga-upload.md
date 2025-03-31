@@ -1,0 +1,1 @@
+The manga-upload is a simple microservice created to build and normalize manga file trees.
