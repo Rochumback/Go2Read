@@ -1,0 +1,3 @@
+[submodule "manga-uploader"]
+	path = manga-uploader
+	url = https://github.com/Rochumback/manga-uploader
